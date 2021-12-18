@@ -48,3 +48,14 @@
    
 ### Home Page
 ![Home page](https://github.com/achrefchebbi/soa_project/blob/master/screenshots/home.PNG)
+### Cart
+![Cart](https://github.com/achrefchebbi/soa_project/blob/master/screenshots/cart.PNG )
+### Admin panel - category list
+![Admin panel]( https://github.com/achrefchebbi/soa_project/blob/master/screenshots/admin-category-list.PNG)
+### Admin panel - products list
+![Admin panel]( https://github.com/achrefchebbi/soa_project/blob/master/screenshots/admin-products-list.PNG)
+### Swagger visualization of REST API 
+![Products]( https://github.com/achrefchebbi/soa_project/blob/master/screenshots/swagger-products.PNG)
+![Orders](https://github.com/achrefchebbi/soa_project/blob/master/screenshots/orders-swagger.PNG)
+![Categories](https://github.com/achrefchebbi/soa_project/blob/master/screenshots/category.PNG )
+![Other endpoints](https://github.com/achrefchebbi/soa_project/blob/master/screenshots/swagger.PNG)
