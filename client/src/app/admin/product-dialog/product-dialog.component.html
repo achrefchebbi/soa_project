@@ -1,0 +1,67 @@
+<form [formGroup]="productForm" >
+  <div class="recipe-dialog">
+    <mat-dialog-content>
+
+      <mat-dialog-title color="primary">
+        <h1>Add product</h1>
+      </mat-dialog-title>
+      <mat-divider></mat-divider>
+      <div fxLayout="column">
+
+        <mat-form-field appearance="outline">
+          <input
+            autocomplete="off"
+            matInput
+            formControlName="name"
+            placeholder="Product name">
+          <mat-error *ngIf="productForm.get('name').hasError('required')">Name is required</mat-error>
+          <mat-error *ngIf="alreadyExists == true">Name is required</mat-error>
+
+        </mat-form-field>
+        <mat-form-field class="description-text">
+          <mat-label>Description</mat-label>
+          <textarea #description maxlength="500" autocomplete="off"
+                    matInput formControlName="description"></textarea>
+          <mat-hint align="end">{{description.value.length}} / 500</mat-hint>
+          <mat-error *ngIf="productForm.get('description').hasError('required')">Description is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            autocomplete="off"
+            matInput
+            formControlName="price"
+            placeholder="Set price"
+            type="number">
+          <mat-error *ngIf="productForm.get('price').hasError('required')">Price is required</mat-error>
+        </mat-form-field>
+
+        <div class="uploadContainer">
+          <mat-button mat-icon-button (click)="fileInput.click()">
+            <div class="sendFile"><mat-icon style="color: '#6772E5'">cloud_upload</mat-icon></div>
+            <input  #fileInput type="file" accept="image/png,image/jpeg" (change)="selectFile($event)" style="display:none;">
+          </mat-button>
+
+          <mat-form-field>
+            <input
+              autocomplete="off"
+              matInput
+              formControlName="fileName"
+              placeholder="Upload an image of recipe"
+              value="{{currentFileUpload?.name}}"
+              readonly
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+      <button mat-raised-button (click)="close()">Close</button>
+      <button mat-raised-button class="saveButton" (click)="save()">Save</button>
+    </mat-dialog-actions>
+  </div>
+</form>
+
+
+
+
